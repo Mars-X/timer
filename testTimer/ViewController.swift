@@ -34,6 +34,11 @@ class ViewController: UIViewController {
 //        print(Str_FileSave_homeDirectWithDocuments!)
         Str_FileSave_fullDirect = "\(Str_FileSave_homeDirectWithDocuments!)\(Str_FileSave_fileName!)\(Str_FileSave_suffix!)"
         print(Str_FileSave_fullDirect!)
+        if fileManager.fileExists(atPath: Str_FileSave_fullDirect!)
+        {
+            Btn_load.isEnabled = true;
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,9 +111,26 @@ class ViewController: UIViewController {
         do{
         try! Str_FileSave_filecontent?.write(toFile: Str_FileSave_fullDirect!, atomically: true, encoding: .utf8)
         }catch{}
+        Btn_load.isEnabled = true;
     }
     
     @IBAction func Btn_Action_LOAD(_ sender: Any) {
+        var loadStr : String? = nil
+        do{
+          loadStr = try! String.init(contentsOfFile: Str_FileSave_fullDirect!)
+        }catch{}
+//        print(loadStr!)
+        let arr_loadStr:[String] = (loadStr?.components(separatedBy: ":"))!
+//        print(arr_loadStr[0])
+//        print(arr_loadStr[1])
+//        print(arr_loadStr[2])
+        Int_Huor = Int(arr_loadStr[0])!
+        Int_Minutes = Int(arr_loadStr[1])!
+        Int_Second = Int(arr_loadStr[2])!
+        
+        self.Label_Show.text = loadStr!
+        Btn_Show.setTitle("继续", for: .normal)
+        Btn_reset.isHidden = false
     }
 }
 
