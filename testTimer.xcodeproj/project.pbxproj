@@ -514,6 +514,7 @@
 				8CF557111E7E35FB00C77C64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CF557121E7E35FB00C77C64 /* Build configuration list for PBXNativeTarget "testTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +523,7 @@
 				8CF557141E7E35FB00C77C64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CF557151E7E35FB00C77C64 /* Build configuration list for PBXNativeTarget "testTimerUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +532,7 @@
 				8CF557171E7E35FB00C77C64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
